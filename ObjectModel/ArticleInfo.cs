@@ -11,6 +11,7 @@ namespace ObjectModel
 		public string Subject { get; set; }
 		public string Abstract { get; set; }
 		public string Keywords { get; set; }
+		public string SessionId { get; set; }
 
 		public override string ToString()
 		{

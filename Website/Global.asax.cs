@@ -24,5 +24,9 @@ namespace Website
 			BundleConfig.RegisterBundles(BundleTable.Bundles);
 			AuthConfig.RegisterAuth();
 		}
+		protected void Session_Start(Object sender, EventArgs e)
+		{
+			Session["init"] = 0;
+		}
 	}
 }

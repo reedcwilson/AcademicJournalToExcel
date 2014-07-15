@@ -26,7 +26,8 @@ namespace AcademicJournalToExcel
 		public MainWindow()
 		{
 			InitializeComponent();
-			munger = new Munger();
+			var connString = "Data Source={0};Version=3;";
+			munger = new Munger(connString);
 			itemsAddedTxt.Text = "0";
 		}
 
