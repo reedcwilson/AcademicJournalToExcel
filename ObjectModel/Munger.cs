@@ -57,7 +57,7 @@ namespace ObjectModel
 					command.Parameters.Add(new SQLiteParameter("@Title", title));
 					command.Parameters.Add(new SQLiteParameter("@Keywords", keywords));
 					command.Parameters.Add(new SQLiteParameter("@Subject", subject));
-					command.Parameters.Add(new SQLiteParameter("@Abstract", subject));
+					command.Parameters.Add(new SQLiteParameter("@Abstract", abs));
 					command.Parameters.Add(new SQLiteParameter("@SessionId", sessionId));
 					command.ExecuteScalar();
 				}
