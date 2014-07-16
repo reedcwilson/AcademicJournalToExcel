@@ -43,7 +43,7 @@ namespace ObjectModel
 		{
 			Items++;
 			var raw = str.Replace("\n", string.Empty).Replace("\t", string.Empty).Replace("\r", string.Empty);
-			var title = raw.Substring(0, raw.IndexOf('.') + 1);
+			var title = raw.Substring(0, raw.IndexOf('.') + 1).Trim();
 			var subject = GetSubject(raw);
 			var abs = GetAbstract(raw);
 			var keywords = GetKeywords(raw);
@@ -69,21 +69,21 @@ namespace ObjectModel
 		{
 			var begin = raw.IndexOf("Subjects:") + "Subjects:".Length;
 			var end = raw.IndexOf("Classification:") - begin;
-			return raw.Substring(begin, end);
+			return raw.Substring(begin, end).Trim();
 		}
 
 		private string GetAbstract(string raw)
 		{
 			var begin = raw.IndexOf("Abstract:") + "Abstract:".Length;
 			var end = raw.IndexOf("Subjects:") - begin;
-			return raw.Substring(begin, end);
+			return raw.Substring(begin, end).Trim();
 		}
 
 		private string GetKeywords(string raw)
 		{
 			var begin = raw.IndexOf("Keywords:") + "Keywords:".Length;
 			var end = raw.IndexOf("Abstract:") - begin;
-			return raw.Substring(begin, end);
+			return raw.Substring(begin, end).Trim();
 		}
 
 		private List<ArticleInfo> GetRows(string sessionId)
