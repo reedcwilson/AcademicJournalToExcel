@@ -61,6 +61,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ArticleInfo.cs" />
+    <Compile Include="LineRemover.cs" />
     <Compile Include="Munger.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

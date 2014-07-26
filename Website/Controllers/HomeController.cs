@@ -54,5 +54,20 @@ namespace Website.Controllers
 			munger.Clear(Session.Contents.SessionID);
 			return View();
 		}
+
+		public ActionResult LineBreaks()
+		{
+			ViewBag.Message = "Copy the text below and press 'Remove' to cleanup your text";
+			ViewBag.Text = "";
+			return View();
+		}
+
+		public ActionResult RemoveLineBreaks(string text)
+		{
+			ViewBag.Message = "Feel free to try again.";
+			var str = new LineRemover().Remove(text);
+			ViewBag.Text = str;
+			return View("~/Views/Home/LineBreaks.cshtml");
+		}
 	}
 }

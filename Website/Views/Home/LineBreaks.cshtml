@@ -1,0 +1,10 @@
+﻿@{
+    ViewBag.Title = "Line Break Remover";
+}
+
+    <h2>Remove Line Breaks</h2>
+    <form method="post" action="/Home/RemoveLineBreaks">
+        <textarea rows="10" id="text" name="text"></textarea>
+        <textarea rows="10" id="fixedText">@ViewBag.Text</textarea>
+        <button id="removeBtn">Remove</button>
+    </form>
