@@ -43,7 +43,8 @@ namespace ObjectModel
 		{
 			Items++;
 			var raw = str.Replace("\n", string.Empty).Replace("\t", string.Empty).Replace("\r", string.Empty);
-			var title = raw.Substring(0, raw.IndexOf('.') + 1).Trim();
+			var index = Math.Min(raw.IndexOf('.'), raw.IndexOf('?'));
+			var title = raw.Substring(0, index + 1).Trim();
 			var subject = GetSubject(raw);
 			var abs = GetAbstract(raw);
 			var keywords = GetKeywords(raw);
